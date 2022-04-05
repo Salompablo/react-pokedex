@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import './_searchbar.scss';
-import { searchPokemon } from '../../Services/Services';
 
 
-export default function SearchBar() { //Buscador 
+export default function SearchBar(props) { 
+
+const { onSearch } = props;
 const [search, setSearch] = useState('');
-const [pokemon, setPokemon] = useState('');
 
 const onChange = (e) => {
     setSearch(e.target.value);
+    if(e.target.value.length === 0){
+        setSearch(null);
+    }
 }
 
 const onClick = async (e) => {
-    const data = await searchPokemon(search);
-    setPokemon(data);
+    onSearch(search)
 }
 
 

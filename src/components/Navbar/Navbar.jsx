@@ -10,10 +10,11 @@ export default function Navbar() {
 
 return (
     <nav>
-        <div>
+    <div />
+    <div>
         <img src={imgUrl} alt="pokeapi-logo" className="navbar-image" />
     </div>
-    <div>  &#10084;&#65039; {favoritePokemons.length} </div>
+    <div>&#10084;&#65039; {favoritePokemons.length}</div>
     </nav>
-)
+);
 }
